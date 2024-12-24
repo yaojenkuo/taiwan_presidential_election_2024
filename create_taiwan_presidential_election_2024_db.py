@@ -74,7 +74,8 @@ class CreateTaiwanPresidentialElection2024DB:
         SELECT polling_places.county,
                polling_places.town,
                polling_places.village,
-               candidates.name AS candidate,
+               candidates.number,
+               candidates.candidate,
                SUM(votes.votes) AS sum_votes
           FROM votes
           LEFT JOIN polling_places
